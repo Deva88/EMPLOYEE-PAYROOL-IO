@@ -3,6 +3,10 @@ package com.emp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+/*
+ *@Description:-Create an Employee Payroll Service to Read and Write Employee Payroll to a Console
+ */
+
 
 public class EmployeePayrollService {
     public enum IOService {CONSOLE_IO,FILE_IO,DB_IO,REST_IO}
@@ -10,8 +14,8 @@ public class EmployeePayrollService {
     public EmployeePayrollService(){}
     public EmployeePayrollService(List<EmployeePayRollData> employeePayrollList){}
 
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         Scanner consoleInputReader = new Scanner(System.in);
         ArrayList<EmployeePayRollData> employeePayrollList = new ArrayList<>();
         EmployeePayrollService employeePayrollService = new EmployeePayrollService(employeePayrollList);
@@ -19,6 +23,7 @@ public class EmployeePayrollService {
         employeePayrollService.writeEmployeePayrollData();
 
     }
+    //read Employee Payroll Date
     private void readEmployeePayrollData(Scanner consoleInputReader){
         System.out.println("Enter Employee id");
         int id =consoleInputReader.nextInt();
@@ -28,6 +33,7 @@ public class EmployeePayrollService {
         double salary=consoleInputReader.nextDouble();
         employeePayrollList.add(new EmployeePayRollData(id,name,salary));
     }
+    //Write Employee Payroll Data
     private void writeEmployeePayrollData(){
         System.out.println("Writing employee payroll roaster to console \n" +employeePayrollList);
     }
